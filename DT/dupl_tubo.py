@@ -137,7 +137,7 @@ def nusselt_tube(fluido1,fluido2,material):
                 Nu_H=(3.66+1.2*pow(fluido1['Diam_ext']/fluido2['Diam_int']))+((0.19*pow(Pe*diam_h/L,0.8))/(1+(0.117*pow(Pe*diam_h/L,0.467))))*g
                 nusselts['Nu_H (Eq. 3.20a)']=Nu_H
             if calor_cnste==False:
-                g=1+0.14*pow(d_ext/D_i,0.1);diam_h=D_i-do
+                g=1+0.14*pow(d_ext/D_i,0.1);diam_h=(D_i**2-do**2)/do
                 Nu_H=(1.86*pow(Pe*diam/L,1./3)*pow(vis_tm/vis_tw,0.14))+((0.19*pow(Pe*diam_h/L,0.8))/(1+(0.117*pow(Pe*diam_h/L,0.467))))*g
                 nusselts['Nu_H (Eq. 3.20b)']=Nu_H
         else:
